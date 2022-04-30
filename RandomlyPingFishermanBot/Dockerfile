@@ -6,7 +6,6 @@ WORKDIR /src
 COPY ["RandomlyPingFishermanBot.csproj", "./"]
 RUN dotnet restore "RandomlyPingFishermanBot.csproj"
 COPY . .
-WORKDIR "/src/RandomlyPingFishermanBot"
 RUN dotnet build "RandomlyPingFishermanBot.csproj" -c Release -o /app/build
 
 FROM build AS publish
