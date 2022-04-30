@@ -13,7 +13,7 @@ var discord = new DiscordClient(new DiscordConfiguration() {
 await discord.ConnectAsync();
 
 while (true) {
-	await Task.Delay(TimeSpan.FromHours(random.NextDouble() * 12));
+	await Task.Delay(TimeSpan.FromHours(random.NextDouble() * 22 + 2));
 	
 	DiscordGuild guild = await discord.GetGuildAsync(guildId);
 	List<DiscordChannel> channels = guild.Channels.Values.ToList();
