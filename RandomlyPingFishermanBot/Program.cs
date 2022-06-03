@@ -12,7 +12,7 @@ var discord = new DiscordClient(new DiscordConfiguration() {
 await discord.ConnectAsync();
 
 while (true) {
-	await Task.Delay(TimeSpan.FromHours(random.NextDouble() * 22 + 2));
+	await Task.Delay(TimeSpan.FromHours(random.NextDouble() * 48 + 24));
 
 	// List all channels in all guilds that the target can access (but not necessarily read history) and the bot can send messages in
 	var channels = new List<DiscordChannel>();
