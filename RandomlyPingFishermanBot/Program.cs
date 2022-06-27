@@ -20,7 +20,8 @@ while (true) {
 		DiscordMember? targetMember = await guild.GetMemberAsync(targetId);
 		if (targetMember != null) {
 			foreach (DiscordChannel channel in guild.Channels.Values) {
-				if ((channel.PermissionsFor(guild.CurrentMember) & Permissions.SendMessages) != 0 &&
+				if (channel.Type == ChannelType.Text &&
+					(channel.PermissionsFor(guild.CurrentMember) & Permissions.SendMessages) != 0 &&
 					(channel.PermissionsFor(targetMember) & Permissions.AccessChannels) != 0) {
 					channels.Add(channel);
 				}
